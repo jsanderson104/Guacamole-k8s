@@ -24,6 +24,7 @@ spec:
         # --- MariaDB Database Container ---
         - name: mariadb
           image: mariadb:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 3306
               name: db-port
@@ -41,6 +42,7 @@ spec:
         # --- Guacamole App Container ---
         - name: guacamole-k8s
           image: docker.io/jsanderson104/guacamole-k8s:v1
+          imagePullPolicy: Always
           ports:
             - containerPort: 4822
               name: guacd
