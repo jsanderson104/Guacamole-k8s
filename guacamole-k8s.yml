@@ -25,7 +25,7 @@ spec:
       containers:
         # --- MariaDB Database Container ---
         - name: mariadb
-          image: docker.io/jsanderson104/guacamole-mariadb-k8s:v1
+          image: mariadb:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3306
