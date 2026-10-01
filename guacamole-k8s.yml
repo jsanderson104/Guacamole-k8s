@@ -40,6 +40,15 @@ spec:
               value: "guac"
             - name: MARIADB_PASSWORD
               value: "guac"
+              volumeMounts:
+            - name: mariadb-storage
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mariadb-storage
+          persistentVolumeClaim:
+            # Reusing your existing PVC
+            claimName: mariadb-pvc
+
 
         # --- Guacamole App Container ---
         - name: guacamole-k8s
