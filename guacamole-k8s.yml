@@ -90,3 +90,7 @@ spec:
       protocol: TCP
       port: 9090
       targetPort: 9090
+    - name: sql-3306
+      protocol: TCP
+      port: 3306
+      targetPort: 3306
