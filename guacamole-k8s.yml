@@ -23,14 +23,20 @@ spec:
       containers:
         # --- MariaDB Database Container ---
         - name: mariadb
-          image: docker.io/jsanderson104/guacamole-mariadb-k8s:v1
+          image: mariadb:latest
           ports:
             - containerPort: 3306
               name: db-port
           env:
             # Note: Configure proper secret management for production environments
             - name: MARIADB_ROOT_PASSWORD
-              value: "change-me-in-production"
+              value: "guac"
+            - name: MARIADB_DATABASE (
+              value: "guac"
+            - name: MARIADB_USER
+              value: "guac"
+            - name: MARIADB_PASSWORD
+              value: "guac"
 
         # --- Guacamole App Container ---
         - name: guacamole-k8s
