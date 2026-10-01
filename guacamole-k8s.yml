@@ -67,20 +67,7 @@ spec:
               value: "guac"
             - name: MARIADB_PASSWORD
               value: "guac"
-      volumeMounts:
-            - name: mariadb-storage
-              mountPath: /one
-            - name: guacamole-storage
-              mountPath: /two
-      volumes:
-        - name: mariadb-storage
-          persistentVolumeClaim:
-            claimName: guacamole-pvc
-        - name: guacamole-storage
-          persistentVolumeClaim:
-            claimName: guacamole-pvc
-
-
+ 
         # --- Guacamole App Container ---
         - name: guacamole-k8s
           image: docker.io/jsanderson104/guacamole-k8s:v1
