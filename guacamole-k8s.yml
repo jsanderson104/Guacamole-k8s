@@ -67,11 +67,11 @@ spec:
               value: "guac"
             - name: MARIADB_PASSWORD
               value: "guac"
-          volumeMounts:
+      volumeMounts:
             - name: mariadb-storage
-              mountPath: /var/lib/mysql
+              mountPath: /one
             - name: guacamole-storage
-              mountPath: /docker-entrypoint-initdb.d
+              mountPath: /two
       volumes:
         - name: mariadb-storage
           persistentVolumeClaim:
