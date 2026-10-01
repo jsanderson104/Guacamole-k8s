@@ -5,6 +5,33 @@ kind: Namespace
 metadata:
   name: guac
 ---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mariadb-pvc
+  namespace: guac       # Put your namespace here
+spec:
+  storageClassName: nfs-dynamic
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: guacamole-pvc
+  namespace: guac       # Put your namespace here
+spec:
+  storageClassName: nfs-dynamic
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
